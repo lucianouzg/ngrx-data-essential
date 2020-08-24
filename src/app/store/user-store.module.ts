@@ -3,25 +3,29 @@ import { EntityDataModule, EntityMetadataMap } from '@ngrx/data';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { Employee } from '../entity/user.entity';
+import { User } from '../entity/user.entity';
 
-export function getUserId(user: Employee): string {
-    return user.name;
+export function getUserId(user: User): number {
+    return user.id;
 }
 
 export const entityMetadata: EntityMetadataMap = {
-    Employee: {
+    User: {
         entityName: 'User',
         selectId: getUserId,
-    }
-}
+    },
+};
+
+const pluralNames = {
+    User: 'Users'
+};
 
 @NgModule({
     imports: [
         StoreModule.forRoot({}, {}),
         EffectsModule.forRoot([]),
-        EntityDataModule.forRoot({ entityMetadata }),
+        EntityDataModule.forRoot({ entityMetadata, pluralNames }),
         StoreDevtoolsModule.instrument(),
     ],
 })
-export class EmployeeStoreModule { }
+export class UserStoreModule { }
