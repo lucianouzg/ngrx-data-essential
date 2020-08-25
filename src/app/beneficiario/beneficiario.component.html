@@ -1,3 +1,25 @@
-<ol>
-    <li *ngFor="let item of listagem">id({{  item.id }}) - {{item.name}} - {{ item.username }}</li>
+<br>
+<button (click)="listOne();">clique para pesquisar 1</button><br>
+<button (click)="listAllCustom();">clique para pesquisar todos (custom)</button><br>
+<button (click)="listAllNgrxData();">clique para pesquisar todos (ngrx-data)</button><br>
+<br>
+<p>listagem abaixo (DATABASE):</p>
+---------------------------
+<br>
+<ol *ngIf="listagem$ | async as listagem">
+    <li *ngFor="let item of toArray(listagem)">id({{  item.id }}) - {{item.name}} - {{ item.username }}</li>
 </ol>
+<br>
+---------------------------
+
+<br><br>
+<button (click)="listAllFromStore();">clique para pesquisar TODOS na store NGRX</button><br>
+<button (click)="listOneFromStore();">clique para pesquisar SOMENTE 1 na store NGRX</button><br>
+<p>listagem abaixo (NGRX STORE):</p>
+---------------------------
+<br>
+<ol *ngIf="listagemStore$ | async as listagemStore">
+    <li *ngFor="let item of toArray(listagemStore)">id({{  item.id }}) - {{item.name}} - {{ item.username }}</li>
+</ol>
+<br>
+---------------------------

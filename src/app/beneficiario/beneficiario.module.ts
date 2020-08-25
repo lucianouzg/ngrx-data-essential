@@ -50,6 +50,7 @@ export class LoadBeneficiarioCompleto implements Action {
 export interface State {
   completo: any;
 }
+
 export const initialState: State = {
   completo: null
 }

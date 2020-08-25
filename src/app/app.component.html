@@ -298,15 +298,21 @@
   }
 </style>
 
+AQUI O CONTEUDO DO APP COMPONENT
 <ol>
-  <li *ngFor="let item of listagem">id({{  item.id }}) - {{item.name}} - {{ item.username }}</li>
+  <!-- <li *ngFor="let item of listagem">id({{  item.id }}) - {{item.name}} - {{ item.username }}</li> -->
 </ol>
 <br>
 <br>
 <br>
 abaixo conteudo do componente beneficiario:
 <br>
-<app-beneficiario></app-beneficiario>
+<app-beneficiario (delegarPesquisa)="obterBeneficiariosFiltrados($event)"
+  (delegarPesquisaAllCustom)="obterBeneficiariosFiltradosCustom()"
+  (delegarPesquisaAllFromStore)="obterBeneficiariosDaStoreAutomatizada()"
+  (delegarPesquisaOneFromStore)="obterBeneficiarioDaStoreAutomatizada($event)"
+  (delegarPesquisaNgrxData)="obterBeneficiariosFiltradosNgrxData()" [listagem$]="listagem$"
+  [listagemStore$]="listagemStore$"></app-beneficiario>
 
 <!-- Toolbar -->
 <!-- <div class="toolbar" role="banner">

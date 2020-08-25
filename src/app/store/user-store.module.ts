@@ -13,6 +13,7 @@ export const entityMetadata: EntityMetadataMap = {
     User: {
         entityName: 'User',
         selectId: getUserId,
+        
     },
 };
 

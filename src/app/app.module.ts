@@ -11,6 +11,17 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 const defaultDataServiceConfig: DefaultDataServiceConfig = {
   root: environment.API_ROOT_URL,
   timeout: environment.HTTP_MS_DELAY,
+  // entityHttpResourceUrls: {
+    // Case matters. Match the case of the entity name.
+    // User: {
+    // You must specify the root as part of the resource URL.
+    // entityResourceUrl: environment.API_ROOT_URL + '/users/',
+    // collectionResourceUrl: environment.API_ROOT_URL + '/users/'
+    // }
+  // },
+  // Simulate latency for demo
+  // getDelay:  500,
+  // saveDelay: 800
 };
 
 @NgModule({
