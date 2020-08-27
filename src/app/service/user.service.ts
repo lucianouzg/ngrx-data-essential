@@ -23,6 +23,7 @@ export class UserService extends EntityCollectionServiceBase<User> {
     //         });
     // }
 
+
     getAllUsersFromStore(): Observable<User[]> {
         return this.entities$;
     }
@@ -34,17 +35,19 @@ export class UserService extends EntityCollectionServiceBase<User> {
             }));
     }
 
-    getAllUsers(): Observable<User[]> {
-        return this.httpService.get<User[]>('https://jsonplaceholder.typicode.com/users');
+    getAllUsers(): any {
+        // return this.httpService.get<User[]>('https://jsonplaceholder.typicode.com/users');
         // return this.getAll(); NOTE utiliza o ngrx-data
+        this.getWithQuery({ id: '1' });
     }
 
     // getOne
     getUserByFilter(filtro: IFiltroBeneficiario): Observable<User | User[]> {
         // NOTE já temos solução para usar os filtros na requisição HTTP portanto escolhi não perder tempo com isso
+        // this.getWithQuery('');
         return this.httpService.get<User>('https://jsonplaceholder.typicode.com/users/' + filtro.id).pipe(
             map((response: User) => {
-                this.addOneToCache(response);
+                // this.addOneToCache(response);
                 console.log('getOne => ', response);
                 return response;
             }));

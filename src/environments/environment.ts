@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   API_ROOT_URL: 'https://jsonplaceholder.typicode.com/',
-  HTTP_MS_DELAY: 90000
+  HTTP_TIMEOUT_IN_MS: 3000
 };
 
 /*

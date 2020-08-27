@@ -21,6 +21,7 @@ export class BeneficiarioComponent implements OnInit, AfterViewInit, OnDestroy, 
   @Output() delegarPesquisaOneFromStore = new EventEmitter<number>();
   @Input() listagem$: User[] | User;
   @Input() listagemStore$: User[] | User;
+  @Input() loading$: Observable<boolean>;
 
 
   constructor(
@@ -40,7 +41,7 @@ export class BeneficiarioComponent implements OnInit, AfterViewInit, OnDestroy, 
   }
 
   ngOnInit(): void {
-
+    this.loading$.subscribe(valor => console.log(valor));
   }
 
   list(): any {

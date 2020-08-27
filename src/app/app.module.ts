@@ -10,7 +10,7 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 const defaultDataServiceConfig: DefaultDataServiceConfig = {
   root: environment.API_ROOT_URL,
-  timeout: environment.HTTP_MS_DELAY,
+  timeout: environment.HTTP_TIMEOUT_IN_MS,
   // entityHttpResourceUrls: {
     // Case matters. Match the case of the entity name.
     // User: {
@@ -20,8 +20,8 @@ const defaultDataServiceConfig: DefaultDataServiceConfig = {
     // }
   // },
   // Simulate latency for demo
-  // getDelay:  500,
-  // saveDelay: 800
+  getDelay:  9000,
+  // saveDelay: 9000
 };
 
 @NgModule({

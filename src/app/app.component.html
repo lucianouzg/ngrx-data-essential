@@ -311,7 +311,9 @@ abaixo conteudo do componente beneficiario:
   (delegarPesquisaAllCustom)="obterBeneficiariosFiltradosCustom()"
   (delegarPesquisaAllFromStore)="obterBeneficiariosDaStoreAutomatizada()"
   (delegarPesquisaOneFromStore)="obterBeneficiarioDaStoreAutomatizada($event)"
-  (delegarPesquisaNgrxData)="obterBeneficiariosFiltradosNgrxData()" [listagem$]="listagem$"
+  (delegarPesquisaNgrxData)="obterBeneficiariosFiltradosNgrxData()"
+  [loading$]="loading$"
+  [listagem$]="listagem$"
   [listagemStore$]="listagemStore$"></app-beneficiario>
 
 <!-- Toolbar -->
